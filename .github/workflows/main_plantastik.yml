@@ -50,8 +50,8 @@ jobs:
 
       - name: Extract ZIP Archive
         run: |
-          mkdir extracted
-          tar -xf node-app-zip -C extracted
+          run: |
+          Expand-Archive -Path node-app-zip -DestinationPath extracted
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
