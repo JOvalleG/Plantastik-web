@@ -51,7 +51,8 @@ jobs:
       - name: Extract ZIP Archive
         run: |
           mkdir extracted
-          unzip node-app-zip -d extracted
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          [System.IO.Compression.ZipFile]::ExtractToDirectory('node-app.zip', 'extracted')
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
