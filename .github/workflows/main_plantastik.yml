@@ -11,7 +11,6 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
       # Create a ZIP archive of the application
       - name: Create ZIP Archive
         run: |
