@@ -21,7 +21,7 @@ jobs:
       # Create a ZIP archive of the application
       - name: Create ZIP Archive
         run: |
-          zip -r node-app.zip .
+          git archive -o node-app.zip HEAD
 
       - name: Upload ZIP artifact for deployment job
         uses: actions/upload-artifact@v3
