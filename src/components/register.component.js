@@ -77,29 +77,13 @@ export default function Register() {
       
       if(errors.name === "" && errors.email ==="" && errors.password === "" && errors.age === ""){
         
-        add(); 
+        alert("USUARIO CREADO");
         
       }else{
         alert("USUARIO NO CREADO");
       }
     }
     
-    const add = () => {
-      Axios.post("http://localhost:3001/create", {
-        name: state.name,
-        email: state.email,
-        password: state.password,
-        gender: state.gender,
-        age: state.age,
-        role: state.role,
-      }).then(() => {
-        alert("USUARIO CREADO");
-        state.userRegistered= true;
-        
-        navigate("/login");
-
-      });
-    };
 
     return (
 

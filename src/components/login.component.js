@@ -65,7 +65,7 @@ export default function Login()  {
 
     if(errors.email ==="" && errors.password === ""){
         
-       login();
+       alert('Exito');
       
     }else{
       alert("FALLO EN EL INICIO DE SESION");
@@ -73,36 +73,6 @@ export default function Login()  {
 
   }
 
-  const login = () => {
-    Axios.post("http://localhost:3001/login", {
-      email: state.email,
-      password: state.password,
-    }).then((res) => {
-        if(res.data.message === "Success"){
-          navigate("/user-info");
-          setState({
-            ...state,
-            login: true
-          });
-
-          
-          setIsLoggedIn(true)
-          setAuthUser({
-            idUser: res.data.userData.id_user,
-            name: res.data.userData.name
-          })
-
-        
-          
-        }else{
-          alert("no record existed")
-        }
-      
-      
-      
-
-    });
-  };
   
   return (
     <>
